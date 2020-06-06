@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+.jekyll-metadata
+.sass-cache
+tests
+_site
+CONTRIBUTING.md
+Gemfile
+Gemfile.lock
+_website*.json
+ve
+venv
+virtualenv
