@@ -22,8 +22,17 @@ docker build -f Dockerfile -t greg .
 
 # Run
 
+We should use **--init** so the signals'd be properly forwarded:
 ```shell script
-docker run --name greg -it -d --rm -p 4242:22 greg
+docker run --init --name greg -it -d --rm -p 4242:22 greg
+
+# The signals will be forwarded:
+docker exec greg sh -c 'kill $(pgrep ssh)'
+```
+
+You can run it interactively also:
+```shell script
+docker run --init --name greg -it --rm -p 4242:22 greg
 ```
 
 # Use
